@@ -7,7 +7,7 @@ function HeroSection() {
   const author = "Franklin D. Roosevelt";
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-lime-100 to-lime-200">
       <div className="max-w-xl mx-auto p-8 bg-white rounded-xl shadow-lg relative">
         <p className="text-2xl font-mono mb-10 leading-snug">{quote}</p>
         <span className="absolute right-8 bottom-6 italic font-medium text-gray-600">

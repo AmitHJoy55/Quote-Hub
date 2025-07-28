@@ -3,7 +3,7 @@ import { Logo_QuoteHub } from "../assets/images";
 
 export const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/motivational", label: "Motivational" },
-    { href: "/romantic", label: "Romantic" },
-    { href: "/funny", label: "Funny" },
+    { href: "/motivational-quotes", label: "Motivational" },
+    { href: "/romantic-quotes", label: "Romantic" },
+    { href: "/funny-quotes", label: "Funny" },
 ];
