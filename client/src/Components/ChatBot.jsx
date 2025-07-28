@@ -1,124 +1,130 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from 'react';
 
 export default function ChatBot() {
-  const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState([
-    { from: "bot", text: "Hello! How can I help you today?" },
-  ]);
-  const [input, setInput] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [messages, setMessages] = useState([]);
+  const [input, setInput] = useState('');
+  const [sessionId, setSessionId] = useState(null);
+  const chatEndRef = useRef(null);
 
-  const handleSend = (e) => {
+  // Effect to initialize the chat session
+  useEffect(() => {
+    const initializeChat = async (sid) => {
+      setIsLoading(true);
+      try {
+        const res = await fetch(`/api/chat/history/${sid}`);
+        if (res.ok) {
+          const data = await res.json();
+          setMessages(data.history.length > 0 ? data.history : [{ from: 'bot', text: 'Hello! How can I help you today?' }]);
+        }
+      } catch (error) {
+        console.error('Failed to fetch chat history:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    const savedSid = localStorage.getItem('chat_session_id');
+    if (savedSid) {
+      setSessionId(savedSid);
+      initializeChat(savedSid);
+    } else {
+      setMessages([{ from: 'bot', text: 'Hello! How can I help you today?' }]);
+    }
+  }, []);
+
+  // Effect to auto-scroll to the latest message
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
+
+  // Function to handle sending a message
+  const handleSend = async (e) => {
     e.preventDefault();
-    if (!input.trim()) return;
-    setMessages([...messages, { from: "user", text: input }]);
-    // Simulate bot reply
-    setTimeout(() => {
-      setMessages((msgs) => [
-        ...msgs,
-        { from: "bot", text: "Sorry, I'm just a demo bot!" },
-      ]);
-    }, 600);
-    setInput("");
+    if (!input.trim() || isLoading) return;
+
+    const userMessage = { from: 'user', text: input };
+    setMessages((prev) => [...prev, userMessage]);
+    setInput('');
+    setIsLoading(true);
+
+    try {
+      const res = await fetch('/api/chat/message', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: input, sessionId }),
+      });
+
+      if (!res.ok) throw new Error(`Server error: ${res.status}`);
+      
+      const data = await res.json();
+
+      if (data.sessionId && !sessionId) {
+        setSessionId(data.sessionId);
+        localStorage.setItem('chat_session_id', data.sessionId);
+      }
+
+      setMessages((prev) => [...prev, { from: 'bot', text: data.reply }]);
+
+      if (data.redirect) {
+        setTimeout(() => {
+          window.location.href = data.redirect;
+        }, 1200);
+      }
+    } catch (error) {
+      console.error('Failed to send message:', error);
+      setMessages((prev) => [...prev, { from: 'bot', text: 'Sorry, something went wrong.' }]);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-return (
-    <div>
-        {/* Chatbot Icon */}
-            {!open && (
-                <button
-                className="fixed bottom-24 right-10 bg-blue-700 hover:bg-blue-800 text-white rounded-full shadow-2xl w-20 h-20 flex items-center justify-center text-4xl z-30 transition-all duration-200"
-                onClick={() => setOpen(true)}
-                aria-label="Open chatbot"
-                >
-                <svg width="40" height="40" fill="none" viewBox="0 0 24 24">
-                    <circle cx="12" cy="12" r="10" fill="#2563eb" />
-                    {/* Rounded smile using an arc */}
-                    <path
-                    d="M9 16a3.5 3 0 0 0 6 0"
-                    stroke="#fff"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    fill="none"
-                    />
-                    <circle cx="9" cy="10" r="1.3" fill="#fff" />
-                    <circle cx="15" cy="10" r="1.3" fill="#fff" />
-                </svg>
-                </button>
-            )}
+  return (
+    <>
+      {!isOpen && (
+        <button onClick={() => setIsOpen(!isOpen)} className="fixed bottom-24 right-10 w-16 h-16 rounded-full bg-blue-700 text-white shadow-2xl text-3xl flex items-center justify-center hover:bg-blue-800 transition-transform transform hover:scale-110">
+          💬
+        </button>
+      )}
+      {isOpen && (
+        <div className="fixed bottom-28 right-10 w-[400px] h-[600px] bg-white rounded-2xl shadow-2xl flex flex-col z-50 border border-gray-200">
+          <div className="flex items-center justify-between px-6 py-4 bg-gray-100 rounded-t-2xl border-b">
+            <span className="text-gray-800 font-bold text-lg">Quote Bot</span>
+            <button className="text-gray-400 hover:text-gray-700" onClick={() => setIsOpen(false)}>✕</button>
+          </div>
 
-            {/* Chatbot Window */}
-        {open && (
-            <div className="fixed bottom-10 right-10 w-[400px] bg-white rounded-2xl shadow-2xl flex flex-col z-30 border border-blue-100">
-                <div className="flex items-center justify-between px-6 py-4 border-b bg-blue-50 rounded-t-2xl">
-                    <span className="font-bold text-blue-700 text-lg flex items-center gap-2">
-                        <svg width="26" height="26" fill="none" viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="10" fill="#2563eb" />
-                            <path
-                                d="M9 16a3.5 3 0 0 0 6 0"
-                                stroke="#fff"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                            />
-                            <circle cx="9" cy="10" r="1.3" fill="#fff" />
-                            <circle cx="15" cy="10" r="1.3" fill="#fff" />
-                        </svg>
-                        Quote Bot
-                    </span>
-                    <button
-                        className="text-gray-400 hover:text-blue-700 transition"
-                        onClick={() => setOpen(false)}
-                        aria-label="Close chatbot"
-                    >
-                        <svg width="24" height="24" fill="none" viewBox="0 0 20 20">
-                            <path
-                                d="M9 6l7 8M16 6l-7 8"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                            />
-                        </svg>
-                    </button>
+          <div className="flex-1 overflow-y-auto px-4 py-3 space-y-4 bg-white">
+            {messages.map((msg, i) => (
+              <div key={i} className={`flex ${msg.from === 'user' ? 'justify-end' : 'justify-start'}`}>
+                <div className={`px-4 py-2.5 rounded-2xl max-w-[80%] shadow-sm text-sm ${msg.from === 'user' ? 'bg-blue-600 text-white rounded-br-lg' : 'bg-gray-200 text-gray-800 rounded-bl-lg'}`}>
+                  {msg.text}
                 </div>
-                <div
-                    className="flex-1 overflow-y-auto px-5 py-4 space-y-3 bg-white"
-                    style={{ maxHeight: "400px" }}
-                >
-                    {messages.map((msg, i) => (
-                        <div
-                            key={i}
-                            className={`flex ${
-                                msg.from === "user" ? "justify-end" : "justify-start"
-                            }`}
-                        >
-                            <div
-                                className={`px-4 py-3 rounded-xl text-base shadow-sm ${
-                                    msg.from === "user"
-                                        ? "bg-blue-600 text-white"
-                                        : "bg-blue-50 text-blue-900"
-                                }`}
-                            >
-                                {msg.text}
-                            </div>
-                        </div>
-                    ))}
-                </div>
-                <form onSubmit={handleSend} className="flex border-t px-3 py-3 bg-blue-50 rounded-b-2xl">
-                    <input
-                        className="flex-1 px-4 py-3 rounded-l-xl border border-gray-200 focus:outline-none text-base"
-                        type="text"
-                        value={input}
-                        onChange={(e) => setInput(e.target.value)}
-                        placeholder="Type your message..."
-                    />
-                    <button
-                        type="submit"
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-r-xl text-base font-semibold transition"
-                    >
-                        Send
-                    </button>
-                </form>
-            </div>
-        )}
-    </div>
-);
+              </div>
+            ))}
+            {isLoading && (
+              <div className="flex justify-start">
+                  <div className="px-4 py-2.5 rounded-2xl bg-gray-200 text-gray-500 rounded-bl-lg">
+                      <span className="animate-pulse">● ● ●</span>
+                  </div>
+              </div>
+            )}
+            <div ref={chatEndRef} />
+          </div>
+
+          <form onSubmit={handleSend} className="flex items-center border-t bg-gray-50 px-3 py-3 rounded-b-2xl">
+            <input
+              type="text" value={input} onChange={(e) => setInput(e.target.value)}
+              placeholder="Ask for a quote..."
+              className="flex-1 px-4 py-2 rounded-l-xl border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              disabled={isLoading}
+            />
+            <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-r-xl text-sm font-medium disabled:bg-blue-400" disabled={isLoading}>
+              Send
+            </button>
+          </form>
+        </div>
+      )}
+    </>
+  );
 }

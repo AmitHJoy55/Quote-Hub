@@ -1,2 +1,2 @@
-# Sneakers_Hub
-This a Ecommerce website for Nike Shoes, sneakers and casual wears . There is a minimal landing page with proper overview of our products along with the price. 
+AI-Powered Quote Hub
+An intelligent quote website featuring motivational, romantic, and funny quotes. Includes a chatbot powered by Gemini AI that understands user mood and navigates them to matching quote pages. Supports session-based chat history, natural conversation, and agentic tool-calling for seamless interaction.
