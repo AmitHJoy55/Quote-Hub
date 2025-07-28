@@ -4,5 +4,5 @@ module.exports = function getRedirectPage(intent) {
     romantic: "/romantic-quotes",
     funny: "/funny-quotes"
   };
-  return map[intent] || "/";
+  return map[intent] || null;
 };

@@ -1,42 +1,420 @@
 {
-  "38cde84e-7718-4a79-ae1a-88effc8bf2c1": [
+  "a4371860-47ea-445d-a66e-47e8bceb971c": [
     {
-      "role": "user",
-      "content": "hi"
+      "from": "user",
+      "text": "k"
     },
     {
-      "role": "bot",
-      "content": "I'm not sure what you’re in the mood for. Want motivation, romance, or laughs?"
-    }
-  ],
-  "9109a723-8cb2-4136-8113-b16399a9e762": [
-    {
-      "role": "user",
-      "content": "hi"
+      "from": "bot",
+      "text": "Great! I'll take you to the unknown quotes page now."
     },
     {
-      "role": "bot",
-      "content": "I'm not sure what you’re in the mood for. Want motivation, romance, or laughs?"
-    }
-  ],
-  "3319ae9d-d86f-41d2-b9e1-d70c306c85ec": [
-    {
-      "role": "user",
-      "content": "hi"
+      "from": "user",
+      "text": "hey there "
     },
     {
-      "role": "bot",
-      "content": "I'm not sure what you’re in the mood for. Want motivation, romance, or laughs?"
-    }
-  ],
-  "76ef2608-8fc9-4f1e-8c96-43d661cf4b10": [
-    {
-      "role": "user",
-      "content": "hi"
+      "from": "bot",
+      "text": "Great! I'll take you to the unknown quotes page now."
     },
     {
-      "role": "bot",
-      "content": "I'm not sure what you’re in the mood for. Want motivation, romance, or laughs?"
+      "from": "user",
+      "text": "give me some motivational quotes"
+    },
+    {
+      "from": "bot",
+      "text": "Great! I'll take you to the unknown quotes page now."
+    },
+    {
+      "from": "user",
+      "text": "t"
+    },
+    {
+      "from": "bot",
+      "text": "Great! I'll take you to the unknown quotes page now."
+    },
+    {
+      "from": "user",
+      "text": "s"
+    },
+    {
+      "from": "bot",
+      "text": "Great! I'll take you to the unknown quotes page now."
+    },
+    {
+      "from": "user",
+      "text": "motivanal quotes needed"
+    },
+    {
+      "from": "bot",
+      "text": "Great! I'll take you to the unknown quotes page now."
+    },
+    {
+      "from": "user",
+      "text": "hi there"
+    },
+    {
+      "from": "bot",
+      "text": "Great! I'll take you to the unknown quotes page now."
+    },
+    {
+      "from": "user",
+      "text": "how are u"
+    },
+    {
+      "from": "bot",
+      "text": "Great! I'll take you to the unknown quotes page now."
+    },
+    {
+      "from": "user",
+      "text": "hi"
+    },
+    {
+      "from": "bot",
+      "text": "Great! I'll take you to the unknown quotes page now."
+    },
+    {
+      "from": "user",
+      "text": "how is going?"
+    },
+    {
+      "from": "bot",
+      "text": "Great! I'll take you to the unknown quotes page now."
+    },
+    {
+      "from": "user",
+      "text": "hey"
+    },
+    {
+      "from": "bot",
+      "text": "Great! I'll take you to the unknown quotes page now."
+    },
+    {
+      "from": "user",
+      "text": "hi"
+    },
+    {
+      "from": "bot",
+      "text": "Great! I'll take you to the unknown quotes page now."
+    },
+    {
+      "from": "user",
+      "text": "hello "
+    },
+    {
+      "from": "bot",
+      "text": "Sorry, my AI brain is taking a break. Please try again soon."
+    },
+    {
+      "from": "user",
+      "text": "how's today weather"
+    },
+    {
+      "from": "bot",
+      "text": "Sorry, my AI brain is taking a break. Please try again soon."
+    },
+    {
+      "from": "user",
+      "text": "12"
+    },
+    {
+      "from": "bot",
+      "text": "Okay, 12!  Is there anything specific you'd like to know about the number 12, or were you thinking of something else?  Perhaps you'd like some motivational, romantic, or funny quotes? Let me know!"
+    },
+    {
+      "from": "user",
+      "text": "How is todays weather"
+    },
+    {
+      "from": "bot",
+      "text": "To answer your question about today's weather, I need to know your location!  Where are you?"
+    },
+    {
+      "from": "user",
+      "text": "in bangladesh"
+    },
+    {
+      "from": "bot",
+      "text": "Okay,  \"in Bangladesh\"...  Tell me more! What kind of quotes are you looking for?"
+    },
+    {
+      "from": "user",
+      "text": "is there any motivational quotes there "
+    },
+    {
+      "from": "bot",
+      "text": "Sure!  Are you looking for motivational, romantic, or funny quotes?"
+    },
+    {
+      "from": "user",
+      "text": "give me some motivational quotes"
+    },
+    {
+      "from": "bot",
+      "text": "Okay, here are some motivational quotes:\n\n\"The only way to do great work is to love what you do.\" - Steve Jobs\n\"The future belongs to those who believe in the beauty of their dreams.\" - Eleanor Roosevelt\n\"Challenges are what make life interesting. Overcoming them is what makes life meaningful.\" - Joshua Marine\n\n\nNeed more, or a different kind of quote?"
+    },
+    {
+      "from": "user",
+      "text": "motivational quotes required , cause i am tired"
+    },
+    {
+      "from": "bot",
+      "text": "Aww, I hear you!  Feeling tired is tough.  Want to see some motivational quotes to lift your spirits?"
+    },
+    {
+      "from": "user",
+      "text": "motivational quotes"
+    },
+    {
+      "from": "bot",
+      "text": "Looking for some motivational quotes?  I can definitely help with that!  Want to see the motivational, romantic, or funny quotes pages?"
+    },
+    {
+      "from": "user",
+      "text": "yeah sure "
+    },
+    {
+      "from": "bot",
+      "text": "\"Yeah sure\" is a bit vague!  Want motivational, romantic, or funny quotes?"
+    },
+    {
+      "from": "user",
+      "text": "motivational qoutes require"
+    },
+    {
+      "from": "bot",
+      "text": "Looking for some motivational quotes?  I can help with that!  Shall we head to the motivational quotes page?"
+    },
+    {
+      "from": "user",
+      "text": "yes, lets head back to motivational page"
+    },
+    {
+      "from": "bot",
+      "text": "Great!  Which motivational page would you like to see?"
+    },
+    {
+      "from": "user",
+      "text": "i wanna hear some funny quotes "
+    },
+    {
+      "from": "bot",
+      "text": "Great! I'll take you to the funny quotes page now."
+    },
+    {
+      "from": "user",
+      "text": "i am not sure what to do now "
+    },
+    {
+      "from": "bot",
+      "text": "Hmm, feeling a bit lost?  Want some motivational, romantic, or funny quotes to help you out?  Let me know which kind you'd prefer!"
+    },
+    {
+      "from": "user",
+      "text": "i want to hear a new story "
+    },
+    {
+      "from": "bot",
+      "text": "Sounds fun!  What kind of story are you in the mood for?  Motivational, romantic, or funny?"
+    },
+    {
+      "from": "user",
+      "text": "i am in angry mood so far  "
+    },
+    {
+      "from": "bot",
+      "text": "Sounds frustrating!  Want to see some motivational, romantic, or funny quotes to cheer you up?"
+    },
+    {
+      "from": "user",
+      "text": "yeah "
+    },
+    {
+      "from": "bot",
+      "text": "\"Yeah\" isn't quite enough info!  Want motivational, romantic, or funny quotes?"
+    },
+    {
+      "from": "user",
+      "text": "You suggest me what should i read first "
+    },
+    {
+      "from": "bot",
+      "text": "Sure!  To help me find the perfect quotes,  what kind of mood are you in? (Motivational, romantic, or funny?)"
+    },
+    {
+      "from": "user",
+      "text": "Motivational"
+    },
+    {
+      "from": "bot",
+      "text": "Looking for some motivation?  I can help you find some great motivational quotes!  Shall we head to the motivational quotes page?"
+    },
+    {
+      "from": "user",
+      "text": "yeah let head to that page"
+    },
+    {
+      "from": "bot",
+      "text": "Sounds good!  Which kind of quotes are you looking for – motivational, romantic, or funny?"
+    },
+    {
+      "from": "user",
+      "text": "Motivational"
+    },
+    {
+      "from": "bot",
+      "text": "Looking for some motivational quotes?  I can help with that!"
+    },
+    {
+      "from": "user",
+      "text": "Motivational quotes required"
+    },
+    {
+      "from": "bot",
+      "text": "Looking for some motivation?  I can help you find some great motivational quotes!  Shall we head over to the motivational quote page?"
+    },
+    {
+      "from": "user",
+      "text": "we head over to the motivational quote page"
+    },
+    {
+      "from": "bot",
+      "text": "Great!  Motivational it is!  One moment while I find the best quotes for you."
+    },
+    {
+      "from": "user",
+      "text": "I want to navigate to the motivational quote page"
+    },
+    {
+      "from": "bot",
+      "text": "Sounds good!  Do you want motivational, romantic, or funny quotes?"
+    },
+    {
+      "from": "user",
+      "text": "motivational"
+    },
+    {
+      "from": "bot",
+      "text": "Looking for some motivation?  I can show you some great motivational quotes!  Shall we head over to the motivational quote page?"
+    },
+    {
+      "from": "user",
+      "text": "i need motivational quotes"
+    },
+    {
+      "from": "bot",
+      "text": "Looking for some motivation?  I can definitely help with that!  Let's head to the motivational quotes page.  Sound good?"
+    },
+    {
+      "from": "user",
+      "text": "lets head back to motivational page"
+    },
+    {
+      "from": "bot",
+      "text": "Sounds good!  Which motivational page – or would you prefer romantic or funny quotes instead?"
+    },
+    {
+      "from": "user",
+      "text": "Hi there "
+    },
+    {
+      "from": "bot",
+      "text": "Hi!  Looking for a motivational, romantic, or funny quote today?"
+    },
+    {
+      "from": "user",
+      "text": "yeah , but first i want to hear about today latest news"
+    },
+    {
+      "from": "bot",
+      "text": "Okay, I can help you find some great quotes later!  But first,  you want the news, right?  Let me know when you're ready for those quotes. 😊"
+    },
+    {
+      "from": "user",
+      "text": "what?"
+    },
+    {
+      "from": "bot",
+      "text": "\"What?\"  Hmmm, what kind of quote are you looking for? Motivational, romantic, or funny?"
+    },
+    {
+      "from": "user",
+      "text": "motvation"
+    },
+    {
+      "from": "bot",
+      "text": "Did you mean \"motivation\"?  I can show you some motivational quotes if you'd like, or perhaps some funny or romantic ones too. Which kind are you looking for?"
+    },
+    {
+      "from": "user",
+      "text": "todays hot news in USA?"
+    },
+    {
+      "from": "bot",
+      "text": "Looking for some news to brighten your day?  Perhaps a motivational, romantic, or funny quote would be better than the headlines?  Which kind are you after?"
+    },
+    {
+      "from": "user",
+      "text": "others"
+    },
+    {
+      "from": "bot",
+      "text": "\"Others,\" huh?  Want a motivational, romantic, or funny quote about that?"
+    },
+    {
+      "from": "user",
+      "text": "funny "
+    },
+    {
+      "from": "bot",
+      "text": "Great! I'll take you to the funny quotes page now."
+    },
+    {
+      "from": "user",
+      "text": "any update of today weather"
+    },
+    {
+      "from": "bot",
+      "text": "Great! I'll take you to the undefined quotes page now."
+    },
+    {
+      "from": "user",
+      "text": "any update of today weather"
+    },
+    {
+      "from": "bot",
+      "text": "Great! I'll take you to the undefined quotes page now."
+    },
+    {
+      "from": "user",
+      "text": "any update of today weather"
+    },
+    {
+      "from": "bot",
+      "text": "Looking for today's weather update?  I can help with that, but I'm also great at finding quotes!  Are you interested in motivational, romantic, or funny quotes instead?"
+    },
+    {
+      "from": "user",
+      "text": "funny quotes there?"
+    },
+    {
+      "from": "bot",
+      "text": "Great! I'll take you to the funny quotes page now."
+    },
+    {
+      "from": "user",
+      "text": "hi there "
+    },
+    {
+      "from": "bot",
+      "text": "Hi!  Looking for some motivation, romance, or a good laugh?  Let me know which type of quote you'd prefer!"
+    },
+    {
+      "from": "user",
+      "text": "i want to hear some funny jokes"
+    },
+    {
+      "from": "bot",
+      "text": "Great! I'll take you to the funny quotes page now."
     }
   ]
 }
