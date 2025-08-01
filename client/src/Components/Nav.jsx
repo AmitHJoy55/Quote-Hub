@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Logo_QuoteHub } from "../assets/images";
 import { navLinks } from "../constants/index";
-
 function Nav() {
   const [active, setActive] = useState(() => localStorage.getItem("activeNav") || null);
 
@@ -20,9 +19,9 @@ function Nav() {
             <img
               src={Logo_QuoteHub}
               alt="Header Logo"
-              width={85}
-              height={25}
-              className="ml-10"
+              width={105}
+              height={50}
+              className="m-15 cursor-pointer"
             />
           </a>
         </div>
@@ -32,8 +31,10 @@ function Nav() {
             <li key={items.label}>
               <a
                 href={items.href}
-                className={`font-montserrat loading-normal text-lg text-white hover:text-red-300 ${
-                  active === items.label ? "text-red-400" : ""
+                className={`font-montserrat loading-normal text-lg ${
+                  active === items.label
+                    ? "text-red-400"
+                    : "text-white hover:text-red-300"
                 }`}
                 onClick={() => setActive(items.label)}
               >

@@ -22,6 +22,9 @@ export default function ChatBot() {
         console.error('Failed to fetch chat history:', error);
       } finally {
         setIsLoading(false);
+        if (isOpen) {
+          chatEndRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
       }
     };
 
@@ -37,7 +40,7 @@ export default function ChatBot() {
   // Effect to auto-scroll to the latest message
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [messages]);
+  }, [isOpen, messages]);
 
   // Function to handle sending a message
   const handleSend = async (e) => {
